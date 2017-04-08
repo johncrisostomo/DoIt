@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Do It-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="911" y="-645"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Task View Controller-->
         <scene sceneID="0Bs-DK-vWD">
             <objects>
-                <viewController id="EN8-OO-cUq" sceneMemberID="viewController">
+                <viewController id="EN8-OO-cUq" customClass="CreateTaskViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EOq-q3-E1x"/>
                         <viewControllerLayoutGuide type="bottom" id="yA9-n6-pnI"/>
@@ -62,12 +63,60 @@
                     <view key="view" contentMode="scaleToFill" id="tl4-iO-p3o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pay-pw-9Hx">
+                                <rect key="frame" x="162.5" y="79" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-dl-w1h">
+                                <rect key="frame" x="56" y="110" width="263" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCS-no-D3p">
+                                <rect key="frame" x="147.5" y="170" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tkl-C1-Ykf">
+                                <rect key="frame" x="163" y="201" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysL-2g-CLv">
+                                <rect key="frame" x="172" y="262" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="EN8-OO-cUq" eventType="touchUpInside" id="KOf-3a-MzL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pay-pw-9Hx" firstAttribute="centerX" secondItem="tl4-iO-p3o" secondAttribute="centerX" id="7LZ-yy-stW"/>
+                            <constraint firstItem="hCS-no-D3p" firstAttribute="centerX" secondItem="tl4-iO-p3o" secondAttribute="centerX" id="84r-EL-AwW"/>
+                            <constraint firstItem="tkl-C1-Ykf" firstAttribute="top" secondItem="hCS-no-D3p" secondAttribute="bottom" constant="10" id="Cq2-6S-D5f"/>
+                            <constraint firstItem="pay-pw-9Hx" firstAttribute="top" secondItem="EOq-q3-E1x" secondAttribute="bottom" constant="15" id="Iit-QG-CBx"/>
+                            <constraint firstItem="VvI-dl-w1h" firstAttribute="leading" secondItem="tl4-iO-p3o" secondAttribute="leadingMargin" constant="40" id="NIy-ne-Viv"/>
+                            <constraint firstItem="hCS-no-D3p" firstAttribute="top" secondItem="VvI-dl-w1h" secondAttribute="bottom" constant="30" id="PeJ-b7-Eqy"/>
+                            <constraint firstItem="VvI-dl-w1h" firstAttribute="centerX" secondItem="tl4-iO-p3o" secondAttribute="centerX" id="V9u-vz-URR"/>
+                            <constraint firstItem="tkl-C1-Ykf" firstAttribute="centerX" secondItem="tl4-iO-p3o" secondAttribute="centerX" id="a4S-6N-ACZ"/>
+                            <constraint firstItem="ysL-2g-CLv" firstAttribute="top" secondItem="tkl-C1-Ykf" secondAttribute="bottom" constant="30" id="bkf-0w-Pfu"/>
+                            <constraint firstItem="ysL-2g-CLv" firstAttribute="centerX" secondItem="tl4-iO-p3o" secondAttribute="centerX" id="ceY-ky-id2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VvI-dl-w1h" secondAttribute="trailing" constant="40" id="jlG-BZ-vTq"/>
+                            <constraint firstItem="VvI-dl-w1h" firstAttribute="top" secondItem="pay-pw-9Hx" secondAttribute="bottom" constant="10" id="ktW-0Q-L1P"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="importantSwitch" destination="tkl-C1-Ykf" id="TMH-Y1-jYu"/>
+                        <outlet property="taskNameTextField" destination="VvI-dl-w1h" id="zzn-qV-EJk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ab-au-bix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="-645"/>
+            <point key="canvasLocation" x="1640.8" y="-645.42728635682158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x25-XG-hLa">
