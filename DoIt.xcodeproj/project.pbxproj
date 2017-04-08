@@ -13,6 +13,7 @@
 		1927C0171E98A49F009326B9 /* DoIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1927C0151E98A49F009326B9 /* DoIt.xcdatamodeld */; };
 		1927C0191E98A49F009326B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1927C0181E98A49F009326B9 /* Assets.xcassets */; };
 		1927C01C1E98A49F009326B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1927C01A1E98A49F009326B9 /* LaunchScreen.storyboard */; };
+		1927C0241E98A712009326B9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1927C0231E98A712009326B9 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1927C0181E98A49F009326B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1927C01B1E98A49F009326B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1927C01D1E98A49F009326B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1927C0231E98A712009326B9 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				1927C00E1E98A49F009326B9 /* AppDelegate.swift */,
 				1927C0101E98A49F009326B9 /* ViewController.swift */,
+				1927C0231E98A712009326B9 /* Task.swift */,
 				1927C0121E98A49F009326B9 /* Main.storyboard */,
 				1927C0181E98A49F009326B9 /* Assets.xcassets */,
 				1927C01A1E98A49F009326B9 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1927C0241E98A712009326B9 /* Task.swift in Sources */,
 				1927C0171E98A49F009326B9 /* DoIt.xcdatamodeld in Sources */,
 				1927C0111E98A49F009326B9 /* ViewController.swift in Sources */,
 				1927C00F1E98A49F009326B9 /* AppDelegate.swift in Sources */,
