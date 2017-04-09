@@ -34,7 +34,7 @@ class CompleteTaskViewController: UIViewController {
         super.viewDidLoad()
         
         if _task.important {
-            taskLabel.text = "❗️\(_task.name)"
+            taskLabel.text = "❗️\(_task.name!)"
         } else {
             taskLabel.text = _task.name
         }
