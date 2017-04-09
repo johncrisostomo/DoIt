@@ -10,15 +10,6 @@ import UIKit
 
 class CompleteTaskViewController: UIViewController {
     private var _task: Task!
-    private var _previousVC: TasksViewController!
-    
-    var previousVC: TasksViewController {
-        get {
-            return _previousVC
-        } set {
-            _previousVC = newValue
-        }
-    }
     
     var task: Task {
         get {
@@ -41,8 +32,12 @@ class CompleteTaskViewController: UIViewController {
     }
     
     @IBAction func completeTapped(_ sender: Any) {
-        _previousVC.tasks.remove(at: _previousVC.selectedIndex)
-        _previousVC.tableView.reloadData()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(_task)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
         navigationController!.popViewController(animated: true)
     }
 }
